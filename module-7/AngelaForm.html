@@ -1,0 +1,135 @@
+<!--
+Angela Vargas
+04/20/2026
+CSD440 7.2 Assignment
+
+Purpose: Collect seven fields of user data using multiple input types and send the data to a PHP form processor.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angela Form</title>
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            background-color: #f4f8f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #355e3b;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: "Times New Roman", serif;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        .inline-group {
+            margin-top: 8px;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        button {
+            background-color: #6b8e23;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: "Times New Roman", serif;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #556b2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Information Form</h1>
+
+        <!-- Form sends data to the PHP response file -->
+        <form action="AngelaResponse.php" method="post">
+
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName">
+
+            <label for="emailAddress">Email Address:</label>
+            <input type="email" id="emailAddress" name="emailAddress">
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" max="120">
+
+            <label for="birthDate">Birth Date:</label>
+            <input type="date" id="birthDate" name="birthDate">
+
+            <label>Gender:</label>
+            <div class="inline-group">
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female" style="display:inline;">Female</label>
+
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male" style="display:inline;">Male</label>
+
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other" style="display:inline;">Other</label>
+            </div>
+
+            <label for="favoriteColor">Favorite Color:</label>
+            <select id="favoriteColor" name="favoriteColor">
+                <option value="">-- Select a Color --</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Purple">Purple</option>
+                <option value="Red">Red</option>
+                <option value="Yellow">Yellow</option>
+            </select>
+
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+
+            <div class="button-group">
+                <button type="submit">Submit Form</button>
+                <button type="reset">Clear Form</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
